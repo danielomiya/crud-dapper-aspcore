@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Employee>
+
+@{
+    ViewData["Title"] = "Funcionários";
+}
+
+<div class="page-header">
+    <h2>@ViewData["Title"]</h2>
+</div>
+<div style="padding-bottom: 15px;" class="text-right">
+    <a asp-action="Create" class="btn btn-success">Cadastrar</a>
+</div>
+<div class="table-responsive">
+    @if (Model.Any())
+    {
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(e => e.Name)</th>
+                <th>@Html.DisplayNameFor(e => e.Phone)</th>
+                <th>@Html.DisplayNameFor(e => e.Rg)</th>
+                <th>@Html.DisplayNameFor(e => e.Cpf)</th>
+                <th>@Html.DisplayNameFor(e => e.RegistrationNumber)</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(e => employee.Name)</td>
+                    <td>@Html.DisplayFor(e => employee.Phone)</td>
+                    <td>@Html.DisplayFor(e => employee.Rg)</td>
+                    <td>@Html.DisplayFor(e => employee.Cpf)</td>
+                    <td>@Html.DisplayFor(e => employee.RegistrationNumber)</td>
+                    <td>
+                        @Html.ActionLink("Detalhes", "Details", new {id = employee.Id}, new {@class = "btn btn-info"})
+                        @Html.ActionLink("Editar", "Edit", new {id = employee.Id}, new {@class = "btn btn-warning"})
+                        @Html.ActionLink("Deletar", "Delete", new {id = employee.Id}, new {@class = "btn btn-danger"})
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-danger">
+            <p>Não há funcionários cadastrados.</p>
+        </div>
+    }
+</div>

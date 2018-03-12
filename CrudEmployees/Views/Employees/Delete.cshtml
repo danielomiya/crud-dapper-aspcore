@@ -1,0 +1,41 @@
+﻿@model Employee
+
+@{
+    ViewData["Model"] = "Funcionário";
+    ViewData["Title"] = "Deletar";
+}
+
+<header class="page-header">
+    <h2>@ViewData["Model"]</h2>
+    <h3>@ViewData["Title"]</h3>
+</header>
+<div class="row">
+    <div class="col-md-5">
+        <p>Tem certeza que deseja deletar este funcionário?</p>
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(e => e.Name)</dt>
+            <dd>@Html.DisplayFor(e => e.Name)</dd>
+            <dt>@Html.DisplayNameFor(e => e.Address)</dt>
+            <dd>@Html.DisplayFor(e => e.Address)</dd>
+            <dt>@Html.DisplayNameFor(e => e.Phone)</dt>
+            <dd>@Html.DisplayFor(e => e.Phone)</dd>
+            <dt>@Html.DisplayNameFor(e => e.Birthday)</dt>
+            <dd>@Html.DisplayFor(e => e.Birthday)</dd>
+            <dt>@Html.DisplayNameFor(e => e.Admission)</dt>
+            <dd>@Html.DisplayFor(e => e.Admission)</dd>
+            <dt>@Html.DisplayNameFor(e => e.Rg)</dt>
+            <dd>@Html.DisplayFor(e => e.Rg)</dd>
+            <dt>@Html.DisplayNameFor(e => e.Cpf)</dt>
+            <dd>@Html.DisplayFor(e => e.Cpf)</dd>
+            <dt>@Html.DisplayNameFor(e => e.RegistrationNumber)</dt>
+            <dd>@Html.DisplayFor(e => e.RegistrationNumber)</dd>
+            <dt>@Html.DisplayNameFor(e => e.Education)</dt>
+            <dd>@Html.DisplayFor(e => e.Education)</dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="submit" value="Deletar" class="btn btn-danger"/>
+            <a asp-action="Index" class="btn btn-default" style="float: right;">Voltar</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+﻿@model Employee
+
+@{
+    ViewData["Model"] = "Funcionário";
+    ViewData["Title"] = "Detalhes";
+}
+
+<header class="page-header">
+    <h2>@ViewData["Model"]</h2>
+    <h3>@ViewData["Title"]</h3>
+</header>
+
+<div class="row">
+
+    <div class="col-md-5">
+        <div class="list-group">
+            <div class="list-group-item">
+                <h3 class="list-group-item-heading">@Html.DisplayNameFor(e => e.Name)</h3>
+                <p class="list-group-item-text">@Html.DisplayFor(e => e.Name)</p>
+            </div>
+            <div class="list-group-item">
+                <h3 class="list-group-item-heading">@Html.DisplayNameFor(e => e.Address)</h3>
+                <p class="list-group-item-text">@Html.DisplayFor(e => e.Address)</p>
+            </div>
+            <div class="list-group-item">
+                <h3 class="list-group-item-heading">@Html.DisplayNameFor(e => e.Phone)</h3>
+                <p class="list-group-item-text">@Html.DisplayFor(e => e.Phone)</p>
+            </div>
+            <div class="list-group-item">
+                <h3 class="list-group-item-heading">@Html.DisplayNameFor(e => e.Birthday)</h3>
+                <p class="list-group-item-text">@Html.DisplayFor(e => e.Birthday) (@Html.DisplayFor(e => e.Age) anos)</p>
+            </div>
+            <div class="list-group-item">
+                <h3 class="list-group-item-heading">@Html.DisplayNameFor(e => e.Admission)</h3>
+                <p class="list-group-item-text">@Html.DisplayFor(e => e.Admission)</p>
+            </div>
+            <div class="list-group-item">
+                <h3 class="list-group-item-heading">@Html.DisplayNameFor(e => e.Rg)</h3>
+                <p class="list-group-item-text">@Html.DisplayFor(e => e.Rg)</p>
+            </div>
+            <div class="list-group-item">
+                <h3 class="list-group-item-heading">@Html.DisplayNameFor(e => e.Cpf)</h3>
+                <p class="list-group-item-text">@Html.DisplayFor(e => e.Cpf)</p>
+            </div>
+            <div class="list-group-item">
+                <h3 class="list-group-item-heading">@Html.DisplayNameFor(e => e.RegistrationNumber)</h3>
+                <p class="list-group-item-text">@Html.DisplayFor(e => e.RegistrationNumber)</p>
+            </div>
+            <div class="list-group-item">
+                <h3 class="list-group-item-heading">@Html.DisplayNameFor(e => e.Education)</h3>
+                <p class="list-group-item-text">@Html.DisplayFor(e => e.Education)</p>
+            </div>
+        </div>
+
+        <div class="text-center">
+            @Html.ActionLink("Deletar", "Delete", new {id = Model.Id}, new {@class = "btn btn-danger", style = "float: left;"})
+            @Html.ActionLink("Editar", "Edit", new {id = Model.Id}, new {@class = "btn btn-warning"})
+            <a asp-action="Index" class="btn btn-default" style="float: right;">Voltar</a>
+        </div>
+    </div>
+</div>
